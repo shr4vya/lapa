@@ -69,7 +69,7 @@ class BaseCounter:
     @property
     def bam(self):
         '''Alignment file used in counting.'''
-        return pysam.AlignmentFile(self.bam_file, 'rb')
+        return pysam.AlignmentFile(self.bam_file, 'rb', check_sq=False)
 
     def iter_reads(self, chrom=None, strand=None):
         if chrom:
